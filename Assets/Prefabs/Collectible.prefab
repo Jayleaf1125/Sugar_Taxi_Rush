@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4188995925999803264}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Collectible
   m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4950737652814861415}
   - component: {fileID: 1038588673917747135}
   - component: {fileID: 1163465662851356372}
-  - component: {fileID: 2163294897053309508}
+  - component: {fileID: 3025894527952861585}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Coin
@@ -153,7 +153,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
---- !u!114 &2163294897053309508
+--- !u!114 &3025894527952861585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,3 +166,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectiblePrefab: {fileID: 1529230680768601885}
+  pointSystemScore: {fileID: 0}
+  collectibleValue: 1
