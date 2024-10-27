@@ -34,7 +34,7 @@ public class TopDownCarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, destination.transform.position) <= 1f)
+        if (Vector3.Distance(transform.position, destination.transform.position) <= 2f)
         {
             destinationController.AssignPosition();
             //Destroy(destination.gameObject);
