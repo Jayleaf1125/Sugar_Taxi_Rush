@@ -13,7 +13,7 @@ public class PickedUp : MonoBehaviour
 
     private void Awake()
     {
-        pointSystemScore = pointSystemScore.GetComponent<TextMeshProUGUI>();    
+        //pointSystemScore = pointSystemScore.GetComponent<TextMeshProUGUI>();    
     }
 
     // Start is called before the first frame update
@@ -35,8 +35,8 @@ public class PickedUp : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
         
-             int score = Convert.ToInt32(pointSystemScore.text);
-             UpdateScore(score);
+             //int score = Convert.ToInt32(pointSystemScore.text);
+             //UpdateScore(score);
 
             Destroy(collectiblePrefab);
         }

@@ -19,6 +19,8 @@ public class TopDownCarController : MonoBehaviour
 
     Rigidbody2D carRigidbody;
 
+    public DestinationController destinationController;
+    public GameObject destination;
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,11 +30,15 @@ public class TopDownCarController : MonoBehaviour
     {
         
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        
+        if (Vector3.Distance(transform.position, destination.transform.position) <= 1f)
+        {
+            destinationController.AssignPosition();
+            //Destroy(destination.gameObject);
+        }
     }
 
     void FixedUpdate()
