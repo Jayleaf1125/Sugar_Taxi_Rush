@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class IncreaseCountdownTimer : MonoBehaviour
+public class DecreaseCountdownTimer : MonoBehaviour
 {
     public GameObject countdownTimer;
 
@@ -18,7 +18,7 @@ public class IncreaseCountdownTimer : MonoBehaviour
     void HandleCoundownTimer()
     {
         TimerLogic timer = countdownTimer.GetComponent<TimerLogic>();
-        float newTime = timer.remainingTime + 5f;
+        float newTime = timer.remainingTime - 5f;
         timer.remainingTime = newTime;
     }
 }

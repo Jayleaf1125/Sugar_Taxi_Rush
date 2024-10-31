@@ -7,6 +7,7 @@ using UnityEngine;
 public class PickUpCollectible : MonoBehaviour
 {
     public TextMeshProUGUI score;
+    public GameObject countdownTimer;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -44,7 +45,11 @@ public class PickUpCollectible : MonoBehaviour
 
     void HandleTimeCandyPickup(CandyStats candyStats) 
     {
-        
+        TimerLogic timer = countdownTimer.GetComponent<TimerLogic>();
+        float increaseTimeAmount = candyStats.collectibleValue;
+
+        float newTime = timer.remainingTime + increaseTimeAmount;
+        timer.remainingTime = newTime;
     }
     IEnumerator HandleHyperCandyPickup(CandyStats candyStats) 
     {
