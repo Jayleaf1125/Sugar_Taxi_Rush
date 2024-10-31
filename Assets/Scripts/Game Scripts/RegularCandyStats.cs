@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class RegularCandyStats : MonoBehaviour
 {
-    public int collectibleValue = 1;
+    public float collectibleValue = 1f;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
