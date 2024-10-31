@@ -684,6 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 254037447}
+  intialTime: 60
   remainingTime: 10
 --- !u!1 &346613533
 GameObject:
@@ -1394,6 +1395,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 973889409562295983, guid: 37c97d2cff37b924ca90e3bac20e7987, type: 3}
+      propertyPath: countdownTimer
+      value: 
+      objectReference: {fileID: 254037445}
     - target: {fileID: 2573618935559246610, guid: 37c97d2cff37b924ca90e3bac20e7987, type: 3}
       propertyPath: m_LocalPosition.x
       value: -74.8
@@ -1437,10 +1442,6 @@ PrefabInstance:
     - target: {fileID: 3722790674788299318, guid: 37c97d2cff37b924ca90e3bac20e7987, type: 3}
       propertyPath: m_Name
       value: Destination
-      objectReference: {fileID: 0}
-    - target: {fileID: 3722790674788299318, guid: 37c97d2cff37b924ca90e3bac20e7987, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

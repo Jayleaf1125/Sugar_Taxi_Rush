@@ -7,8 +7,14 @@ using UnityEngine.PlayerLoop;
 
 public class TimerLogic : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI countdownTimer;
-    [SerializeField] float remainingTime;
+    public TextMeshProUGUI countdownTimer;
+    public float intialTime = 60f;
+    public float remainingTime;
+
+    private void Awake()
+    {
+        remainingTime = intialTime;
+    }
 
     private void Update()
     {
