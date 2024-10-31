@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class TimerLogic : MonoBehaviour
 {
@@ -25,11 +26,18 @@ public class TimerLogic : MonoBehaviour
         {
             remainingTime = 0;
             countdownTimer.color = Color.red;
+            StartCoroutine(MoveToGameOverScreen());
         }
 
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         countdownTimer.text = string.Format("{0:00}: {1:00}", minutes, seconds);
+    }
+
+    IEnumerator MoveToGameOverScreen()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadSceneAsync(1);
     }
 }

@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 254037447}
-  intialTime: 60
+  intialTime: 5
   remainingTime: 10
 --- !u!1 &346613533
 GameObject:
