@@ -15,6 +15,39 @@ public class PickUpCollectible : MonoBehaviour
             Debug.Log("Candy was collected was collected");
             HandleRegularCandyPickUp(other);
         }
+
+        if (other.CompareTag("Hyper Candy"))
+        {
+            Debug.Log("Candy was collected was collected");
+            HandleRegularCandyPickUp(other);
+        }
+
+        if (other.CompareTag("Regular Candy"))
+        {
+            Debug.Log("Candy was collected was collected");
+            HandleRegularCandyPickUp(other);
+        }
+
+        if (other.CompareTag("Regular Candy"))
+        {
+            Debug.Log("Candy was collected was collected");
+            HandleRegularCandyPickUp(other);
+        }
+
+        string tag = other.tag;
+
+        switch(tag)
+        {
+            case "Regular Candy":
+                HandleRegularCandyPickUp(other);
+                break;
+            case "Time Candy":
+                break;
+            case "Hyper Candy":
+                break;
+            case "Size Candy":  
+                break;
+        }
     }
 
     void HandleRegularCandyPickUp(Collider2D other)
@@ -23,7 +56,7 @@ public class PickUpCollectible : MonoBehaviour
 
         if (regularCandyStats != null)
         {
-            int score = Convert.ToInt32(this.score.text);
+            float score = Convert.ToInt32(this.score.text);
             score += regularCandyStats.collectibleValue;
             this.score.text = Convert.ToString(score);
         }
