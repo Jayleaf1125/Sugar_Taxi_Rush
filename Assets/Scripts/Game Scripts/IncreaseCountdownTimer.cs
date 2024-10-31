@@ -18,7 +18,7 @@ public class IncreaseCountdownTimer : MonoBehaviour
     void HandleCoundownTimer()
     {
         TimerLogic timer = countdownTimer.GetComponent<TimerLogic>();
-        timer.intialTime -= 2f;
-        timer.remainingTime = timer.intialTime;
+        float newTime = timer.remainingTime + 5f;
+        timer.remainingTime = newTime;
     }
 }
