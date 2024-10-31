@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Regular Candy
+  - Time Candy
+  - Size Candy
+  - Hyper Candy
   layers:
   - Default
   - TransparentFX

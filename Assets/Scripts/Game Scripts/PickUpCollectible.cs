@@ -10,55 +10,58 @@ public class PickUpCollectible : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Regular Candy"))
-        {
-            Debug.Log("Candy was collected was collected");
-            HandleRegularCandyPickUp(other);
-        }
+        HandleCandyPickup(other);
+    }
 
-        if (other.CompareTag("Hyper Candy"))
-        {
-            Debug.Log("Candy was collected was collected");
-            HandleRegularCandyPickUp(other);
-        }
-
-        if (other.CompareTag("Regular Candy"))
-        {
-            Debug.Log("Candy was collected was collected");
-            HandleRegularCandyPickUp(other);
-        }
-
-        if (other.CompareTag("Regular Candy"))
-        {
-            Debug.Log("Candy was collected was collected");
-            HandleRegularCandyPickUp(other);
-        }
-
+    void HandleCandyPickup(Collider2D other)
+    {
         string tag = other.tag;
+        CandyStats candyStats = other.GetComponent<CandyStats>();
 
-        switch(tag)
+        switch (tag)
         {
             case "Regular Candy":
-                HandleRegularCandyPickUp(other);
+                HandleRegularCandyPickUp(candyStats);
                 break;
             case "Time Candy":
+                HandleTimeCandyPickup(candyStats);
                 break;
             case "Hyper Candy":
+                StartCoroutine(HandleHyperCandyPickup(candyStats));
                 break;
-            case "Size Candy":  
+            case "Size Candy":
+                HandleSizeCandyPickup(candyStats);
                 break;
         }
     }
 
-    void HandleRegularCandyPickUp(Collider2D other)
+    void HandleRegularCandyPickUp(CandyStats candyStats)
     {
-        RegularCandyStats regularCandyStats = other.GetComponent<RegularCandyStats>();
-
-        if (regularCandyStats != null)
-        {
-            float score = Convert.ToInt32(this.score.text);
-            score += regularCandyStats.collectibleValue;
-            this.score.text = Convert.ToString(score);
-        }
+        float score = Convert.ToInt32(this.score.text);
+        score += candyStats.collectibleValue;
+        this.score.text = Convert.ToString(score);
     }
+
+    void HandleTimeCandyPickup(CandyStats candyStats) 
+    {
+        
+    }
+    IEnumerator HandleHyperCandyPickup(CandyStats candyStats) 
+    {
+        TopDownCarController playerStats = GetComponent<TopDownCarController>();
+        float multiplier = candyStats.collectibleValue;
+
+        playerStats.acceleration_factor *= multiplier;
+        playerStats.maxSpeed *= multiplier;
+        Debug.Log("Hyperspeed Gained");
+
+        yield return new WaitForSeconds(3f);
+
+        playerStats.acceleration_factor /= multiplier;
+        playerStats.maxSpeed /= multiplier;
+        Debug.Log("Hyperspeed Lost");
+    }
+    void HandleSizeCandyPickup(CandyStats candyStats) { }
+
+     
 }
