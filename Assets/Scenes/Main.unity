@@ -1494,7 +1494,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 645840271897504863, guid: 37c97d2cff37b924ca90e3bac20e7987, type: 3}
       propertyPath: m_Radius
-      value: 0.6
+      value: 0.525
       objectReference: {fileID: 0}
     - target: {fileID: 973889409562295983, guid: 37c97d2cff37b924ca90e3bac20e7987, type: 3}
       propertyPath: countdownTimer
