@@ -19,6 +19,6 @@ public class DecreaseCountdownTimer : MonoBehaviour
     {
         TimerLogic timer = countdownTimer.GetComponent<TimerLogic>();
         float newTime = timer.remainingTime - 5f;
-        timer.remainingTime = (newTime <= 15f ? 16f : newTime);
+        timer.remainingTime = (newTime <= 26f ? 26f : newTime);
     }
 }
