@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RegularCandyStats : MonoBehaviour
+public class CandyStats : MonoBehaviour
 {
     public float collectibleValue = 1f;
 
