@@ -133,4 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb97a4a3d386ab74cbc64461f44a3ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleValue: 1
+  collectibleValue: 1.25
