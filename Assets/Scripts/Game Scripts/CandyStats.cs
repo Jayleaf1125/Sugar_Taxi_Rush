@@ -21,6 +21,8 @@ public class CandyStats : MonoBehaviour
         {
             Destroy(this.gameObject);
             ss.StartShake(0.5f, 0.5f);
+            FindObjectOfType<AudioManager>().Play("CandyImpact", 1, 0.3f, false);
+
         }
     }
 

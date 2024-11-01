@@ -40,6 +40,7 @@ public class TopDownCarController : MonoBehaviour
             destinationController.AssignPosition();
             //Destroy(destination.gameObject);
             ss.StartShake(0.6f, 0.6f);
+            FindObjectOfType<AudioManager>().Play("win", 1, 0.5f, false);
 
         }
     }

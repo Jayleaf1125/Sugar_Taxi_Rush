@@ -59,14 +59,14 @@ public class PickUpCollectible : MonoBehaviour
         TopDownCarController playerStats = GetComponent<TopDownCarController>();
         float multiplier = candyStats.collectibleValue;
 
-        playerStats.acceleration_factor *= multiplier;
-        playerStats.maxSpeed *= multiplier;
+        playerStats.acceleration_factor *= multiplier + 4;
+        playerStats.maxSpeed *= multiplier + 4;
         Debug.Log("Hyperspeed Gained");
         
         yield return new WaitForSeconds(3f);
 
-        playerStats.acceleration_factor /= multiplier;
-        playerStats.maxSpeed /= multiplier;
+        playerStats.acceleration_factor /= multiplier + 4;
+        playerStats.maxSpeed /= multiplier + 4;
         Debug.Log("Hyperspeed Lost");
     }
     IEnumerator HandleSizeCandyPickup(CandyStats candyStats) 
