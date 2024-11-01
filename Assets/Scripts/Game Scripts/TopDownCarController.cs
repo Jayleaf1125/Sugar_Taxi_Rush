@@ -17,9 +17,11 @@ public class TopDownCarController : MonoBehaviour
     float rotation_angle = 0;
     float velocityVsUp = 0;
     public ScreenShake ss;
+    public int maxObjectIncrease = 10;
 
     Rigidbody2D carRigidbody;
-
+    public RottenCandySpawner rottenCandy;
+    
     public DestinationController destinationController;
     public GameObject destination;
     // Start is called before the first frame update
@@ -41,6 +43,8 @@ public class TopDownCarController : MonoBehaviour
             //Destroy(destination.gameObject);
             ss.StartShake(0.6f, 0.6f);
             FindObjectOfType<AudioManager>().Play("win", 1, 0.5f, false);
+            rottenCandy.maxObjects += 10;
+            rottenCandy.Respawn();
 
         }
     }

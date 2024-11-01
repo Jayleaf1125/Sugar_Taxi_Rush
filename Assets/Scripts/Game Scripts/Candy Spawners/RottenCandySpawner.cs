@@ -7,7 +7,6 @@ public class RottenCandySpawner : MonoBehaviour
     public GameObject[] roads;         // Array of road GameObjects
     public GameObject objectPrefab;    // Prefab of the object to spawn
     public int maxObjects = 50;        // Maximum number of objects to maintain
-
     private List<GameObject> spawnedObjects = new List<GameObject>();
 
     void Start()
@@ -64,7 +63,6 @@ public class RottenCandySpawner : MonoBehaviour
             {
                 // Instantiate the object at the random point
                 GameObject newObject = Instantiate(objectPrefab, randomPoint, Quaternion.identity);
-
                 // Optionally, parent it to the road for organization
                 newObject.transform.parent = selectedRoad.transform;
 
@@ -79,6 +77,16 @@ public class RottenCandySpawner : MonoBehaviour
         else
         {
             Debug.LogWarning("Selected road does not have a Collider2D component.");
+        }
+
+       
+    }
+    public void Respawn()
+    {
+        for (int i = 0; i < maxObjects; i++)
+        {
+            SpawnObject();
+
         }
     }
 }

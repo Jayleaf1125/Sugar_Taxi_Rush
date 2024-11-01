@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleValue: 1
+  ss: {fileID: 0}
 --- !u!114 &4996830948989370531
 MonoBehaviour:
   m_ObjectHideFlags: 0

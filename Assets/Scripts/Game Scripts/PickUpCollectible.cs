@@ -8,7 +8,12 @@ public class PickUpCollectible : MonoBehaviour
 {
     public TextMeshProUGUI score;
     public GameObject countdownTimer;
+    public HealthLogic healthLogic;
 
+    public void Start()
+    {
+        healthLogic = FindAnyObjectByType<HealthLogic>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         HandleCandyPickup(other);
@@ -59,14 +64,14 @@ public class PickUpCollectible : MonoBehaviour
         TopDownCarController playerStats = GetComponent<TopDownCarController>();
         float multiplier = candyStats.collectibleValue;
 
-        playerStats.acceleration_factor *= multiplier + 4;
-        playerStats.maxSpeed *= multiplier + 4;
+        playerStats.acceleration_factor *= multiplier + 1;
+        playerStats.maxSpeed *= multiplier + 1;
         Debug.Log("Hyperspeed Gained");
         
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
 
-        playerStats.acceleration_factor /= multiplier + 4;
-        playerStats.maxSpeed /= multiplier + 4;
+        playerStats.acceleration_factor /= multiplier + 1;
+        playerStats.maxSpeed /= multiplier + 1;
         Debug.Log("Hyperspeed Lost");
     }
     IEnumerator HandleSizeCandyPickup(CandyStats candyStats) 
@@ -76,7 +81,7 @@ public class PickUpCollectible : MonoBehaviour
 
         carSize.localScale *= multiplier;
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(7f);
 
         carSize.localScale /= multiplier;
     }
@@ -90,7 +95,7 @@ public class PickUpCollectible : MonoBehaviour
 
         float score = Convert.ToInt32(this.score.text);
         float newScore = score - candyStats.collectibleValue;
-
+        healthLogic.DepleteHealth();
         score = (newScore <= 0 ? 0 : newScore);
         this.score.text = Convert.ToString(score);
     }
