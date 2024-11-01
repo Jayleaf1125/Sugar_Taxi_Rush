@@ -62,7 +62,7 @@ public class PickUpCollectible : MonoBehaviour
         playerStats.acceleration_factor *= multiplier;
         playerStats.maxSpeed *= multiplier;
         Debug.Log("Hyperspeed Gained");
-
+        
         yield return new WaitForSeconds(3f);
 
         playerStats.acceleration_factor /= multiplier;
