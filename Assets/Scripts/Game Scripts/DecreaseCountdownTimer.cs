@@ -11,7 +11,7 @@ public class DecreaseCountdownTimer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Destination has been reached");
+
             HandleCoundownTimer();
         }
     }
@@ -19,6 +19,6 @@ public class DecreaseCountdownTimer : MonoBehaviour
     {
         TimerLogic timer = countdownTimer.GetComponent<TimerLogic>();
         float newTime = timer.remainingTime - 5f;
-        timer.remainingTime = newTime;
+        timer.remainingTime = (newTime <= 15f ? 16f : newTime);
     }
 }

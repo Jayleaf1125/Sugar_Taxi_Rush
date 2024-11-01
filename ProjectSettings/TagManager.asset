@@ -9,6 +9,7 @@ TagManager:
   - Size Candy
   - Hyper Candy
   - Rotten
+  - Building
   layers:
   - Default
   - TransparentFX
