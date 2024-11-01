@@ -33,6 +33,9 @@ public class PickUpCollectible : MonoBehaviour
             case "Size Candy":
                 StartCoroutine(HandleSizeCandyPickup(candyStats));
                 break;
+            case "Rotten":
+                HandleRottenCandyPickup(candyStats);
+                break;
         }
     }
 
@@ -77,6 +80,21 @@ public class PickUpCollectible : MonoBehaviour
 
         carSize.localScale /= multiplier;
     }
+    void HandleRottenCandyPickup(CandyStats candyStats)
+    {
+        // TimerLogic timer = countdownTimer.GetComponent<TimerLogic>();
+        // float decreaseTimeAmount = candyStats.collectibleValue;
 
-     
+        // float newTime = timer.remainingTime - decreaseTimeAmount;
+        // timer.remainingTime = newTime;
+
+        float score = Convert.ToInt32(this.score.text);
+        float newScore = score - candyStats.collectibleValue;
+
+        score = (newScore <= 0 ? 0 : newScore);
+        this.score.text = Convert.ToString(score);
+    }
+
+
+
 }
