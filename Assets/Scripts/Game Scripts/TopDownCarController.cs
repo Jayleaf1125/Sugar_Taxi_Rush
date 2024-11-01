@@ -16,6 +16,7 @@ public class TopDownCarController : MonoBehaviour
     float steering_input = 0;
     float rotation_angle = 0;
     float velocityVsUp = 0;
+    public ScreenShake ss;
 
     Rigidbody2D carRigidbody;
 
@@ -38,6 +39,8 @@ public class TopDownCarController : MonoBehaviour
         {
             destinationController.AssignPosition();
             //Destroy(destination.gameObject);
+            ss.StartShake(0.6f, 0.6f);
+
         }
     }
 
@@ -73,6 +76,7 @@ public class TopDownCarController : MonoBehaviour
         }
         Vector2 engineForceVector = transform.up * acceleration_input * acceleration_factor;
         carRigidbody.AddForce(engineForceVector, ForceMode2D.Force);
+
     }
 
     void ApplySteering()
