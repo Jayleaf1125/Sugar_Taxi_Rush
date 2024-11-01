@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5911087408778912755}
   - component: {fileID: 6871461616187386}
   - component: {fileID: 5013710168907282223}
+  - component: {fileID: 6326093722565500846}
   m_Layer: 0
   m_Name: 'Size Candy '
   m_TagString: Size Candy
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6.73, y: 6.73, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,7 +69,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Radius: 0.16
 --- !u!212 &6871461616187386
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -110,8 +111,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0.38102233, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 7012845135769f44f9cd38c5a115952f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,3 +135,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleValue: 1.25
+--- !u!114 &6326093722565500846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190478218707799184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f16a40cb3bc91d741a2bab122589248e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  minMoveDuration: 4
+  maxMoveDuration: 10
+  minWaitDuration: 1
+  maxWaitDuration: 3
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  obstacleDetectionRadius: 0.2

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8773361561670234158}
   - component: {fileID: 9217064689516603268}
   - component: {fileID: -230630291532837853}
+  - component: {fileID: 4996830948989370531}
   m_Layer: 0
   m_Name: Regular Candy
   m_TagString: Regular Candy
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6.73, y: 6.73, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,7 +69,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Radius: 0.19
 --- !u!212 &9217064689516603268
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -134,3 +135,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleValue: 1
+--- !u!114 &4996830948989370531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6554797385832768223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f16a40cb3bc91d741a2bab122589248e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  minMoveDuration: 4
+  maxMoveDuration: 10
+  minWaitDuration: 1
+  maxWaitDuration: 3
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  obstacleDetectionRadius: 0.2
