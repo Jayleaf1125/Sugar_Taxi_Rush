@@ -31,7 +31,7 @@ public class PickUpCollectible : MonoBehaviour
                 StartCoroutine(HandleHyperCandyPickup(candyStats));
                 break;
             case "Size Candy":
-                HandleSizeCandyPickup(candyStats);
+                StartCoroutine(HandleSizeCandyPickup(candyStats));
                 break;
         }
     }
@@ -66,7 +66,17 @@ public class PickUpCollectible : MonoBehaviour
         playerStats.maxSpeed /= multiplier;
         Debug.Log("Hyperspeed Lost");
     }
-    void HandleSizeCandyPickup(CandyStats candyStats) { }
+    IEnumerator HandleSizeCandyPickup(CandyStats candyStats) 
+    { 
+        Transform carSize = GetComponent<Transform>();
+        float multiplier = candyStats.collectibleValue;
+
+        carSize.localScale *= multiplier;
+
+        yield return new WaitForSeconds(3f);
+
+        carSize.localScale /= multiplier;
+    }
 
      
 }
